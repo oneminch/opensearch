@@ -1,56 +1,22 @@
 {
-  "name": "nuxt-opensearch",
-  "version": "0.1.0",
-  "description": "OpenSearch discovery integration for Nuxt",
-  "repository": "https://github.com/oneminch/nuxt-opensearch",
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/types.d.mts",
-      "import": "./dist/module.mjs"
-    }
-  },
-  "main": "./dist/module.mjs",
-  "typesVersions": {
-    "*": {
-      ".": [
-        "./dist/types.d.mts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "workspaces": [
-    "playground"
-  ],
+  "name": "opensearch-workspace",
+  "private": true,
   "scripts": {
-    "prepack": "nuxt-module-build build",
-    "dev": "npm run dev:prepare && nuxt dev playground",
-    "dev:build": "nuxt build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "dev": "pnpm --filter nuxt-opensearch dev",
+    "dev:build": "pnpm --filter nuxt-opensearch dev:build",
+    "dev:prepare": "pnpm --filter nuxt-opensearch dev:prepare",
+    "build": "pnpm --filter nuxt-opensearch prepack",
     "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+    "test": "pnpm --filter nuxt-opensearch test",
+    "test:watch": "pnpm --filter nuxt-opensearch test:watch",
+    "test:types": "pnpm --filter nuxt-opensearch test:types",
+    "release": "pnpm --filter nuxt-opensearch release"
   },
-  "dependencies": {
-    "@nuxt/kit": "^4.5.2"
-  },
+  "packageManager": "pnpm@10.22.0",
   "devDependencies": {
-    "@nuxt/devtools": "^3.4.2",
     "@nuxt/eslint-config": "^1.17.0",
-    "@nuxt/module-builder": "^1.0.3",
-    "@nuxt/schema": "^4.5.2",
-    "@nuxt/test-utils": "^4.3.2",
-    "@types/node": "latest",
-    "changelogen": "^0.6.2",
     "eslint": "^10.11.0",
-    "nuxt": "^4.5.2",
     "typescript": "~6.0.3",
-    "vitest": "^4.1.11",
     "vue-tsc": "^3.3.11"
   }
 }

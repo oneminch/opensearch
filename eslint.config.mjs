@@ -11,7 +11,7 @@ export default createConfigForNuxt({
   },
   dirs: {
     src: [
-      './playground',
+      './packages/nuxt-opensearch/playground',
     ],
   },
 })
