@@ -1,0 +1,16 @@
+{
+  "name": "nuxt-opensearch-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "prepare": "pnpm --filter nuxt-opensearch run build:stub && pnpm --filter nuxt-opensearch run build:prepare && nuxt prepare",
+    "postinstall": "pnpm run prepare"
+  },
+  "dependencies": {
+    "nuxt-opensearch": "workspace:*",
+    "nuxt": "catalog:shared"
+  }
+}

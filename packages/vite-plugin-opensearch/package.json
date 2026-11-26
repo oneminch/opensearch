@@ -1,0 +1,12 @@
+{
+  "name": "vite-plugin-opensearch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenSearch discovery integration for Vite",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  }
+}

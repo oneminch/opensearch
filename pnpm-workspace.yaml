@@ -1,4 +1,37 @@
+packages:
+  - apps/*
+  - packages/*
+
+catalogs:
+  apps:
+    '@vitejs/plugin-vue': ^6.0.10
+    '@vue/tsconfig': ^0.9.1
+    better-sqlite3: ^13.2.0
+    docus: ^5.15.1
+    vite: ^8.3.6
+    vue: ^3.5.44
+  shared:
+    '@nuxt/eslint-config': ^1.17.0
+    '@types/node': '^24.19.3'
+    eslint: ^10.15.0
+    nuxt: ^4.5.2
+    typescript: ~6.0.3
+    vue-tsc: ^3.3.14
+  pkg:
+    '@nuxt/devtools': ^3.4.2
+    '@nuxt/kit': ^4.5.2
+    '@nuxt/module-builder': ^1.0.3
+    '@nuxt/schema': ^4.5.2
+    '@nuxt/test-utils': ^4.3.2
+    changelogen: ^0.6.2
+    vitest: ^4.1.11
+
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
   unrs-resolver: true
+  vue-demi: true
+
+minimumReleaseAgeExclude:
+  - '@nuxtjs/mcp-toolkit@0.24.4'
+  - docus@5.15.1

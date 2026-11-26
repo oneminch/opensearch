@@ -1,0 +1,62 @@
+{
+  "name": "nuxt-opensearch",
+  "version": "0.1.0",
+  "description": "OpenSearch discovery integration for Nuxt",
+  "repository": "github:oneminch/opensearch",
+  "license": "MIT",
+  "author": {
+    "name": "Dawit",
+    "url": "https://bsky.app/profile/minch.dev"
+  },
+  "type": "module",
+  "keywords": [
+    "opensearch",
+    "nuxt-module",
+    "vite-plugin",
+    "nuxt",
+    "vite"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types.d.mts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build build",
+    "build:stub": "nuxt-module-build build --stub",
+    "build:prepare": "nuxt-module-build prepare",
+    "release": "pnpm run lint && pnpm run test && pnpm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "@nuxt/kit": "catalog:pkg"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "catalog:pkg",
+    "@nuxt/eslint-config": "catalog:shared",
+    "@nuxt/module-builder": "catalog:pkg",
+    "@nuxt/schema": "catalog:pkg",
+    "@nuxt/test-utils": "catalog:pkg",
+    "@types/node": "catalog:shared",
+    "changelogen": "catalog:pkg",
+    "eslint": "catalog:shared",
+    "nuxt": "catalog:shared",
+    "typescript": "catalog:shared",
+    "vitest": "catalog:pkg",
+    "vue-tsc": "catalog:shared"
+  }
+}

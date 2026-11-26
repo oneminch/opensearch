@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    permissions:
+      contents: read
+      id-token: write
+    uses: oneminch/workflows/.github/workflows/nuxt-module-ci.yml@v1
+    with:
+      prepare-script: pnpm run prepare:nuxt
