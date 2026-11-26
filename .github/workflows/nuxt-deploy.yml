@@ -1,0 +1,17 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    permissions:
+      pages: write
+      id-token: write
+    uses: oneminch/workflows/.github/workflows/gh-pages-deploy.yml@v1
+    with:
+      working-directory: './apps/docs'
+      artifact-path: './apps/docs/.output/public'

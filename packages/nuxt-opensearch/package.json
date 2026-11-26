@@ -2,9 +2,20 @@
   "name": "nuxt-opensearch",
   "version": "0.1.0",
   "description": "OpenSearch discovery integration for Nuxt",
-  "repository": "https://github.com/oneminch/opensearch",
+  "repository": "github:oneminch/opensearch",
   "license": "MIT",
+  "author": {
+    "name": "Dawit",
+    "url": "https://bsky.app/profile/minch.dev"
+  },
   "type": "module",
+  "keywords": [
+    "opensearch",
+    "nuxt-module",
+    "vite-plugin",
+    "nuxt",
+    "vite"
+  ],
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",
@@ -24,30 +35,28 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build build",
-    "dev": "npm run dev:prepare && nuxt dev playground",
-    "dev:build": "nuxt build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "build:stub": "nuxt-module-build build --stub",
+    "build:prepare": "nuxt-module-build prepare",
+    "release": "pnpm run lint && pnpm run test && pnpm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+    "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.5.2"
+    "@nuxt/kit": "catalog:pkg"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^3.4.2",
-    "@nuxt/eslint-config": "^1.17.0",
-    "@nuxt/module-builder": "^1.0.3",
-    "@nuxt/schema": "^4.5.2",
-    "@nuxt/test-utils": "^4.3.2",
-    "@types/node": "latest",
-    "changelogen": "^0.6.2",
-    "eslint": "^10.11.0",
-    "nuxt": "^4.5.2",
-    "typescript": "~6.0.3",
-    "vitest": "^4.1.11",
-    "vue-tsc": "^3.3.11"
+    "@nuxt/devtools": "catalog:pkg",
+    "@nuxt/eslint-config": "catalog:shared",
+    "@nuxt/module-builder": "catalog:pkg",
+    "@nuxt/schema": "catalog:pkg",
+    "@nuxt/test-utils": "catalog:pkg",
+    "@types/node": "catalog:shared",
+    "changelogen": "catalog:pkg",
+    "eslint": "catalog:shared",
+    "nuxt": "catalog:shared",
+    "typescript": "catalog:shared",
+    "vitest": "catalog:pkg",
+    "vue-tsc": "catalog:shared"
   }
 }

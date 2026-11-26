@@ -11,10 +11,8 @@ export default createConfigForNuxt({
   },
   dirs: {
     src: [
-      './packages/nuxt-opensearch/playground',
+      './packages/nuxt-opensearch/',
+      './packages/vite-plugin-opensearch/',
     ],
   },
 })
-  .append(
-    // your custom flat config here...
-  )

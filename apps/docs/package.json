@@ -1,0 +1,12 @@
+{
+  "name": "opensearch-docs",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build"
+  },
+  "dependencies": {
+    "docus": "catalog:apps",
+    "better-sqlite3": "catalog:apps",
+    "nuxt": "catalog:shared"
+  }
+}

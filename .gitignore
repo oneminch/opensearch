@@ -1,7 +1,10 @@
 # Dependencies
 node_modules
 
+*.local
+
 # Logs
+logs
 *.log*
 
 # Temp directories
@@ -15,6 +18,7 @@ node_modules
 
 # Generated dirs
 dist
+dist-ssr
 
 # Nuxt
 .nuxt
@@ -54,6 +58,11 @@ coverage
 Network Trash Folder
 Temporary Items
 .apdisk
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Misc
 TODO.md

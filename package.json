@@ -2,21 +2,25 @@
   "name": "opensearch-workspace",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter nuxt-opensearch dev",
-    "dev:build": "pnpm --filter nuxt-opensearch dev:build",
-    "dev:prepare": "pnpm --filter nuxt-opensearch dev:prepare",
-    "build": "pnpm --filter nuxt-opensearch prepack",
-    "lint": "eslint .",
-    "test": "pnpm --filter nuxt-opensearch test",
-    "test:watch": "pnpm --filter nuxt-opensearch test:watch",
-    "test:types": "pnpm --filter nuxt-opensearch test:types",
-    "release": "pnpm --filter nuxt-opensearch release"
+    "dev:nuxt": "pnpm --filter nuxt-opensearch-demo dev",
+    "build:nuxt": "pnpm --filter nuxt-opensearch-demo build",
+    "prepare:nuxt": "pnpm --filter nuxt-opensearch-demo prepare",
+    "dev:vite": "pnpm --filter vite-opensearch-demo dev",
+    "build:vite": "pnpm --filter vite-opensearch-demo build",
+    "dev:docs": "pnpm --filter opensearch-docs dev",
+    "build:docs": "pnpm --filter opensearch-docs build",
+    "build:module": "pnpm --filter nuxt-opensearch prepack",
+    "test:module": "pnpm --filter nuxt-opensearch test",
+    "test:types:module": "pnpm --filter nuxt-opensearch test:types",
+    "build:plugin": "pnpm --filter vite-plugin-opensearch build",
+    "test:plugin": "pnpm --filter vite-plugin-opensearch test",
+    "lint": "eslint ."
   },
-  "packageManager": "pnpm@10.22.0",
   "devDependencies": {
-    "@nuxt/eslint-config": "^1.17.0",
-    "eslint": "^10.11.0",
-    "typescript": "~6.0.3",
-    "vue-tsc": "^3.3.11"
-  }
+    "@nuxt/eslint-config": "catalog:shared",
+    "eslint": "catalog:shared",
+    "typescript": "catalog:shared",
+    "vue-tsc": "catalog:shared"
+  },
+  "packageManager": "pnpm@12.23.0"
 }

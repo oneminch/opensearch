@@ -1,0 +1,16 @@
+name: Publish to NPM
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    permissions:
+      contents: read
+      id-token: write
+    uses: oneminch/workflows/.github/workflows/npm-publish.yml@v1
+    with:
+      package-filter: 'nuxt-opensearch'
